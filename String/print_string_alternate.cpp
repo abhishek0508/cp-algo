@@ -1,0 +1,3 @@
+string alternate(string str){
+    
+}
