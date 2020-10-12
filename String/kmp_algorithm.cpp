@@ -8,9 +8,12 @@
 // Proper prefixes are “”, “A” and “AB”. Suffixes of the string are “”, “C”, “BC” and “ABC”.
 // lps[i] = the longest proper prefix of pat[0..i] . which is also a suffix of pat[0..i]. 
 
+#include<bits/stdc++.h>
+using namespace std;
+
 vector<int> preprocesses(string pattern){
     int len=0;
-    lps[0]=0;
+    vector<int> lps;
     int i=1;
     vector<int> lps(pattern.length(),0);
     while(i < pattern.length()){

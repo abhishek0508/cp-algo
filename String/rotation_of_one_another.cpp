@@ -1,8 +1,13 @@
 // find if two strings are rotations of one another
 // 
+
+#include<bits/stdc++.h>
+using namespace std;
+
 vector<int> preprocesses(string pattern){
     int len=0;
-    lps[0]=0;
+    int n = pattern.length();
+    vector<int> lps(n,0);
     int i=1;
     vector<int> lps(pattern.length(),0);
     while(i < pattern.length()){
@@ -40,7 +45,6 @@ bool kmp(string text, string pat){
         
         if(j==m){
             return true;
-            j = lps[j-1];
         }
         else if(i<n && text[i]!=pat[j]){
             if(j!=0){
