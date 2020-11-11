@@ -1,5 +1,7 @@
-stack<int> st;
+#include<bits/stdc++.h>
+using namespace std;
 
+stack<int> st;
 void dfs(vector<int> graph[], int i, bool visited[]){
     visited[i]=true;
     for(int x: graph[i]){
@@ -24,4 +26,8 @@ vector<int> fun(int n, vector<int> graph[]){
     }
     return res;
     
+}
+
+int main(){
+    return 0;
 }

@@ -1,3 +1,4 @@
+// https://www.hackerearth.com/practice/notes/solving-linear-recurrence-relation/
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
@@ -11,8 +12,8 @@ vector<vector<ll>> power(vector<vector<ll>> t, ll x){
     // change this for fiboannci
     res[0][0]=0;
     res[0][1]=1;
-    res[1][0]=-2;
-    res[1][1]=4;
+    res[1][0]=1;
+    res[1][1]=1;
 
     ll temp1=0,temp2=0,temp3=0,temp4=0;
     
@@ -64,8 +65,8 @@ ll nth_term_recurrence(ll n,ll k){
     // change this for fibonacci
     t[0][0]=0;
     t[0][1]=1;
-    t[1][0]=-2;
-    t[1][1]=4;
+    t[1][0]=1;
+    t[1][1]=1;
 
     if(n==1){
         return 1;

@@ -1,4 +1,6 @@
 // while doing bfs if i encounter vertex that has already been coloured with same aas this one
+#include<bits/stdc++.h>
+using namespace std;
 
 bool check_bipartite(int n, vector<int> graph[]){
     int color[n] = {-1};

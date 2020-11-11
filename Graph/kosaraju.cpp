@@ -1,29 +1,39 @@
 // scc
 // find all scc in graph, genrally graph is directed
-dfs(vector<int> graph[], bool visited[], int u){
+
+#include<bits/stdc++.h>
+using namespace std;
+
+stack<int> st;
+void dfs(vector<int> graph[], bool visited[], int u){
     visited[u] = true;
     for(int x: graph[u]){
         if(!visited[x]){
             dfs(graph,visited,x);
         }
     }
-
     st.push(u);
 }
 
-r_dfs(vector<int> graph[], int visited[], int u, vector<int> &temp){
+void r_dfs(vector<int> graph[], bool visited[], int u, vector<int> &temp){
     visited[u]=true;
     temp.push_back(u);
     for(int x: graph[u]){
         if(!visited[x]){
-            dfs(rgraph,visited,x,temp);
+            r_dfs(graph,visited,x,temp);
         }
     }
+
 }
 
-vector<vector<int>> scc(){
-    vector<int> graph[];
-    vector<int> rgraph[];
+vector<vector<int>> scc(vector<int> graph[], vector<int> r_graph[], int n){
+
+    bool visited[n]={false};
+    for(int i=0;i<n;i++){
+        if(!visited[i]){
+            dfs(graph, visited, i);
+        }
+    }
 
     vector<vector<int>> res;
     while(!st.empty()){
@@ -31,7 +41,7 @@ vector<vector<int>> scc(){
         st.pop();
         if(!visited[v]){
             vector<int> temp;
-            dfs(rgraph,visited,v,temp);
+            r_dfs(r_graph,visited,v,temp);
             res.push_back(temp);
         }
     }

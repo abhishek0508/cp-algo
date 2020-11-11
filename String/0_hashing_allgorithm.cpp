@@ -1,46 +1,42 @@
 // string hashing algorithm
-// applciations
+// applications
 // -> number of different substring in a string
 // -> search for duplicate string in array of string
 // find whether a patter matches a substring
 
 #include<bits/stdc++.h>
 using namespace std;
-
+#define ll long long
 
 bool isMatch(string txt, string pat){
     // preprocessing text
-    int n = txt.length();
-    int pre[n] = {}, hash[n] = {};
+    ll n = txt.length();
+    ll pre[n] = {}, hash[n] = {};
     
-    int p = 31;
-    int m = 1000000007;
+    ll p = 31;
+    ll m = 1000000007;
     pre[0] = txt[0];
     hash[0] = 1;
-    for(int i=1;i<n;i++){
+
+    
+    for(ll i=1;i<n;i++){
         pre[i] = ((pre[i-1]*p)%m + (txt[i])%m)%m;
-        if(pre[i]<0){
-            pre[i] += m;
-        }
         hash[i] = (hash[i-1]*p)%m;
-        if(hash[i]<0){
-            hash[i] += m;
-        }
     }
 
-    for(int i=0;i<n;i++){
+    for(ll i=0;i<n;i++){
         cout<<pre[i]<<" ";
     }
     cout<<endl;
     
-    for(int i=0;i<n;i++){
+    for(ll i=0;i<n;i++){
         cout<<hash[i]<<" ";
     }
     cout<<endl;
 
 
     // calculating substring's hash
-    int i,j;
+    ll i,j;
     cout<<"enter index"<<endl;
     cin>>i>>j;
 
