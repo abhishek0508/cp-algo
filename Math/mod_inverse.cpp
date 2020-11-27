@@ -3,10 +3,11 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define mod 1000000007
+#define ll long long
 
-long long fact[100000];
-long long power(long long x, long long y){
-    long long res=1;
+ll fact[100000];
+ll power(ll x, ll y){
+    ll res=1;
     // cout<<x<<" "<<y<<endl;
     while(y>0){
         if(y&1){
@@ -19,19 +20,19 @@ long long power(long long x, long long y){
     return res%mod;
 }
 
-long long modInverse(long long x){
+ll modInverse(ll x){
     return power(x,mod-2);
 }
 
-long long nCr(long long n,long long r){
+ll nCr(ll n,ll r){
     fact[1]=1;
     fact[0]=1;
-    for(long long i=1;i<=1000;i++){
+    for(ll i=1;i<=1000;i++){
         fact[i]=(i*fact[i-1])%mod;
     }
 
-    long long x = ((fact[n]%mod)*(modInverse(fact[n-r])%mod))%mod;
-    long long y = ((x%mod)*(modInverse(fact[r])%mod))%mod;
+    ll x = ((fact[n]%mod)*(modInverse(fact[n-r])%mod))%mod;
+    ll y = ((x%mod)*(modInverse(fact[r])%mod))%mod;
 
     return y;
 }

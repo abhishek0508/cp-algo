@@ -1,4 +1,4 @@
-// a^b^c mod m = (a^b^c mod n) mod m, where n = φ(m) Euler's totient function.
+// a^b^c mod m = (a^(b^c mod n) mod m), where n = φ(m) Euler's totient function.
 // If m is prime, then n = m-1.
 // Edit: as Nabb polled out, this only holds if a is coprime to m. So you would have to check this first.
 // computing 
@@ -40,12 +40,14 @@ ll euler(ll x){
 }
 
 ll exponent(ll a, ll b, ll c){
-    long long x = power(b,c,euler(mod));
-    ll res = power(a,x,mod);
-    return res;
+    // long long x = power(b,c,euler(mod));
+    // ll res = power(a,x,mod);
+    // return res;
+
+    return euler(a);
 }
 int main(){
-    ll a=10,b=2,c=3;
+    ll a=20,b=2,c=3;
     cout<<exponent(a,b,c)<<endl;
     return 0;
 }
