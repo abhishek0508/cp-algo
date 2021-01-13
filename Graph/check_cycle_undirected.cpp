@@ -1,4 +1,4 @@
-//  only differnece between is in unidirected we need to skip parent vertices
+//  only differecne between is in unidirected we need to skip parent vertices
 #include<bits/stdc++.h>
 using namespace std;
 

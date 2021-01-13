@@ -7,7 +7,6 @@ intialize(){
 
 // finding the root of set/tree
 int find(int x){
-
     while(x!=parent[x]){
         parent[x] = parent[parent[x]];
         x = parent[x];
