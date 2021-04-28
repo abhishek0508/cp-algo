@@ -3,9 +3,9 @@
 using namespace std;
 
 bool check_bipartite(int n, vector<int> graph[]){
-    int color[n] = {-1};
-    bool visited[n] = false;
-    for(int i=0;i<n;i++){
+    int color[n] = {0};
+    vector<bool> visited(n,false);
+    for(int i=0;i<n;i++){ 
         if(color[i]==0 && !visited[i]){
             queue<pair<int,int>> qu;
             color[i] = 1;
